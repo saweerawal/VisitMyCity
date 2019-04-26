@@ -1,0 +1,112 @@
+.mybg
+{
+    background: url(../images/bg.jpg);
+}
+.col1
+{
+    height: 350px;
+    padding: 20px;
+    padding-top: 48px;
+    
+}
+
+.col2
+{
+    height: 280px;
+    padding: 20px;
+    padding-top: 38px;
+    
+}
+.col3
+{
+    height: 300px;
+    padding: 20px;
+    padding-top: 28px;
+}
+.pics
+{
+    border-radius: 3em;
+    border-style: double;
+    border-color: black;
+    border-width: thin;
+    width: 185px;
+    height: 220px;
+    
+}
+.pic-name
+{
+    
+    padding: 10px;
+    background-color: darkcyan;
+    color: white;
+    border-color: white;
+    border-radius: 1.5em;
+    border-width:thick;
+    border-style:solid;
+}
+#login
+{
+    min-width: 250px;
+    min-height: 90px;
+    background-color: rgba(255,255,255,0.7);
+   padding: 14px 14px 0;
+    overflow: hidden;
+}
+#login .social-buttons{
+   margin: 12px 0px;
+}
+.btn-user
+{
+     overflow: hidden;
+    color: #fff;
+    background-color: #3b599d;
+}
+.btn-admin
+{
+
+    color: #fff;
+    background-color: #55acee;
+}
+.btn-user:hover
+{
+    overflow: hidden;
+    color: #fff;
+    background-color: #5c699e;
+}
+.btn-admin:hover
+{
+    overflow: hidden;
+    color: #fff;
+    background-color: #449bdd;
+}
+.modal-dialog
+{
+  margin: 150px auto;
+  width: 500px;
+  height: 100px;    
+}
+.myf
+{
+    width: 75%;
+    padding: 5px;
+    border: 2px solid #aaa;
+    box-sizing: border-box;
+    border-radius: 4.5px;
+    margin: 0 auto;
+}
+@media (max-width:768px)
+{
+  .btn-user
+    {
+        display: block;
+        width: 140px;
+        margin: 10px auto;
+    }
+    .btn-admin
+    {
+        display: block;
+        width: 140px;
+        margin: 10px auto;
+    }
+
+}

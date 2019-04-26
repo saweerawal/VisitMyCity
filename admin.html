@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<title>VisitMyCity:Admin</title>
+
+	<!--  -->
+    <link href="css/style.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+	
+	
+	<div class="navbar-wrapper">
+    <div class="container"> 
+    <div class="container-fluid">
+		  <nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top">
+    <div class="container-fluid">
+				<div class="navbar-header"> 
+				<button type="button" data-toggle="collapse" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+				</button> 
+				<a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt="#logo"></a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							 <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+						</li>
+						
+				</ul>
+       
+       <ul id="login1" class="nav navbar-nav navbar-right">
+        <li class="user" style="padding-right: 15px;"><?php include "php/valid_admin.php";
+        echo $_SESSION['adminname'];
+        ?></li>
+        </ul>
+        </div>
+        </div>
+			</nav>
+   </div>
+</div>
+
+    </div>
+       
+	</div>
+	<div style=" padding-top: 55px;">
+	    <h2 style="text-align: center; font-family: cursive;">User Details</h2>
+	</div>
+	
+	<div style="" class="container-fluid">
+	<div class="table-responsive" style="margin: 0px auto; padding:35px; width: 75%;">
+	    <table class="table">
+	        
+	        <thead>
+	            <tr>
+	                <th>#</th>
+	                <th>User Name</th>
+	                <th>Password</th>
+	                <th>Email id</th>
+	                <th>Mobile No.</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+            <?php include"php/db.php";
+            $sql="SELECT * FROM USER;";
+            $run_sql=mysqli_query($conn,$sql);
+            while($rows=mysqli_fetch_array($run_sql))
+            {
+                echo " <tr>
+	                <td>{$rows['id']}</td>
+	                <td>{$rows['name']}</td>
+	                <td>{$rows['password']}</td>
+	                <td>{$rows['email_id']}</td>
+	                <td>{$rows['mobile_no']}</td>
+	            </tr>";
+            }
+            ?>
+            
+	           
+	        </tbody>
+	    </table>
+	    
+	    
+	</div>
+	
+	
+    </div>
+	
+	
+	
+	
+	<div style=" padding-top: 0px;">
+	    <h2 style="text-align: center; font-family: cursive;">Rooms Details</h2>
+	</div>
+	
+	<div style="" class="container-fluid">
+	<div class="table-responsive" style="margin: 0px auto; padding:5px; width: 100%;">
+	    <table class="table">
+	        
+	        <thead>
+	            <tr>
+	                <th>#</th>
+	                <th>Room Image</th>
+	                <th>Address</th>
+	                <th>Pincode</th>
+	                <th>Owner Name</th>
+	                <th>Owner Mobile No.</th>
+	                <th>Owner Email id</th>
+	                <th>Room Fare</th>
+	                <th>No. of rooms</th>
+	                <th>No. of single beds</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+            <?php if(session_status()==PHP_SESSION_NONE) 
+{session_start();}
+           include"php/db.php";
+            $sql="SELECT * FROM AFFORDABLE_ROOMS;";
+            $run_sql=mysqli_query($conn,$sql);
+            while($rows=mysqli_fetch_array($run_sql))
+            { 
+                echo " <tr>
+	                <td>{$rows['id']}</td>
+	                <td><img width='150px' height='170px' src='{$rows['img_src']}'/></td>
+	                <td>{$rows['addr']}</td>
+                    <td>{$rows['pin']}</td>
+	                <td>{$rows['owner_name']}</td>
+	                <td>{$rows['owner_mobno']}</td>
+	                <td>{$rows['owner_email_id']}</td>
+	                <td>{$rows['room_fare']}</td>
+	                <td>{$rows['no_of_rooms']}</td>
+	                <td>{$rows['no_of_single_beds']}</td>
+                    <td><button data-target='#edit-rooms' id='{$rows['id']}' data-toggle='modal'name='edit-rooms-details' class='btn btn-info edit-room-details'>Edit</button></td>
+	            </tr>";
+            }
+            ?>
+            
+	           
+	        </tbody>
+	    </table>
+	    
+	    
+	</div>
+	
+	
+    </div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="modal fade" role="dialog" name="edit-rooms" id="edit-rooms">
+            <form action="php/update-room.php" method="post">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+<!--
+			            <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title"></h3>
+			            </div>
+-->
+			            <div class="modal-body">
+			            <button type="button" class="close" data-dismiss="modal">&times;</button>
+			            <?php 
+                      
+echo "<div><input type='hidden' id='id' name='id' ></div>
+                           <div>Address:<input id='addr' name='addr' style='margin-left:80px; width:280px;' type='text'  placeholder='Address'></div>
+                           <div style='padding-top:20px;'>Pincode:<input id='pin' name='pin' style='margin-left:80px; width:280px;' type='text'  placeholder='Pincode'></div>
+                        <div style='padding-top:20px;'>Owner Name:<input id='owner_name' style='margin-left:50px; width:280px;' type='text' name='owner_name' placeholder='Ownername'></div>
+                        <div style='padding-top:20px;'>Owner Mobile No.:<input id='owner_mobno' name='owner_mobno' style='margin-left:20px; width:280px;' type='text'  placeholder='OwnerMobileNo.'></div>
+                        <div style='padding-top:20px;'>Owner Email id:<input id='owner_email_id' name='owner_email_id' style='margin-left:38px; width:280px;' type='text' placeholder='OwnerEmailId'></div>
+                        <div style='padding-top:20px;'>Room Fare:<input id='room_fare' name='room_fare' style='margin-left:63px; width:280px;' type='text' placeholder='RoomFare'></div>
+                        <div style='padding-top:20px;'>No of Rooms:<input id='no_of_rooms' name='no_of_rooms' style='margin-left:50px; width:280px;' type='text' placeholder='No of Rooms'></div>
+                        <div style='padding-top:20px;'>No of Single Beds:<input id='no_of_single_beds' name='no_of_single_beds' style='margin-left:20px; width:280px;' type='text' placeholder='No of Single Beds'></div>";
+                          
+			            
+                   
+			            
+                        ?>
+                    
+			            </div>
+                        <div class="modal-footer">
+                            <button id="savechanges" name="savechanges" value="savechanges" class="btn btn-success">SAVE CHANGES
+                            </button>
+			            </div>
+			          
+
+			        </div>
+			    </div>
+			    </form>
+			</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="#" name="footer"></a>
+			<footer>
+			    <div class="row">
+			        <div class="col-lg-3">
+			            <a class="navbar-brand" href="index.html"><img class="logo" src="images/logo.png" alt="#logo"></a>
+			        </div>
+			        <div class="col-lg-3">
+			            <p><b>Contact Us</b><br>+91 9893093459<br>+91 8904527439
+			            </p>
+			            <p><b>Email Id</b><br>visitmycity1221@gmail.com <br>visit_my_city1111@gmail.com</p>
+			        </div>
+			        <div class="col-lg-3">
+			            <p><b>Explore More</b> <br> <a href="photos.html" class="ex">Photos</a>
+			            <br>   <a href="#about-section" class="ex">About us</a></p>
+			        </div>
+			        <div class="col-lg-3">
+			            <p><b>Follow Us on</b><br>
+			            <i class="fa fa-facebook"></i>
+			            <i class="fa fa-twitter"></i>
+			            <i class="fa fa-whatsapp"></i>
+			            <i class="fa fa-instagram"></i>
+			            </p>
+			        </div>
+			    </div>
+			</footer>
+
+	
+	
+	
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
+	<script type="text/javascript">
+         $(document).ready(function()
+         {
+            $('.edit-room-details').on('click',function()
+        {
+                $tr=$(this).closest('tr');
+                var data=$tr.children('td').map(function()
+                {
+                    return $(this).text();
+                }).get();
+                console.log(data);
+                $('#id').val(data[0]);
+                $('#addr').val(data[2]);
+                $('#pin').val(data[3]);
+                $('#owner_name').val(data[4]);
+                $('#owner_mobno').val(data[5]);
+                $('#owner_email_id').val(data[6]);
+                $('#room_fare').val(data[7]);
+                $('#no_of_rooms').val(data[8]);
+                $('#no_of_single_beds').val(data[9]);
+
+        });
+        });  
+	</script>
+
+</body>
+
+</html>

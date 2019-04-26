@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+	
+	
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/map.css" rel="stylesheet">
+
+	<title>VisitMyCity:Map</title>
+
+	<!--  -->
+
+	<style>
+
+	</style>
+
+</head>
+
+<body class="mybg">
+
+   <div >
+   <div class="navbar-wrapper">
+    <div class="container"> 
+    <div class="container-fluid">
+		  <nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top">
+    <div class="container-fluid">
+				<div class="navbar-header"> 
+				<button type="button" data-toggle="collapse" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+				</button> 
+				<a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt="#logo"></a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li>
+							 <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							 <a class="nav-link" href="index.html#about-section">About us</a>
+						</li>
+						<li class="nav-item">
+							 <a class="nav-link" href="#footer">Contact us</a>
+						</li>
+						<li class="nav-item">
+							 <a class="nav-link" href="photos.html">Photos</a>
+						</li>
+						<li class="nav-item">
+							 <a class="nav-link" href="besttimetovisit.html">Best Time To Visit</a>
+						</li>
+						<li class="nav-item active">
+							 <a class="nav-link" href="#">Map</a>
+						</li>
+						<li class="nav-item">
+							 <a class="nav-link" href="hotels.html">Hotels</a>
+						</li>
+						
+						
+				</ul>
+<!--
+					<form class="form-inline">
+						<input class="form-control mr-sm-2" type="text"> 
+						<button class="btn btn-primary my-2 my-sm-0" type="submit">
+							Search
+						</button>
+					</form>
+-->
+					<ul id="login1" class="nav navbar-nav navbar-right">
+       <li><a href="#" data-toggle="modal" data-target="#RegisterUser" name="user-register">Register</a></li>
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a>
+        <ul id="login" class="dropdown-menu">
+           <li>
+               <div class="row1">
+                  <div class="col-sm-12">
+                      Log In Via:
+                  </div><br>
+               </div>
+               <div class="row1 social-buttons" >
+                   <div class="col-sm-6">
+                       <a href="#" class="btn btn-user" data-toggle="modal" data-target="#loginModaluser">USER</a>
+                   </div>
+                   <div class="col-sm-6">
+                   <a href="#" class="btn btn-admin" data-toggle="modal" data-target="#loginModaladmin">ADMIN</a>
+                   </div>
+               </div>
+           </li>
+        </ul>
+        </li>
+					</ul>
+				</div>
+				</div>
+			</nav>
+   </div>
+</div>
+
+    </div>
+
+<h1 style="text-align: center;margin-top: 60px;">Map</h1>
+
+	<div class="container mapped">
+	
+	
+	<iframe class="map" src="https://www.google.com/maps/d/u/1/embed?mid=1OEvFFX_FRwtUBxinHHqaxh3Qcm1nwpHu" width="1000" height="600" allowfullscreen></iframe>
+	
+	</div>
+
+
+        
+        <div><br> <br></div>
+        
+        		<div class="modal fade" role="dialog" id="loginModaluser">
+        		<form action="php/valid_user.php" method="post">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title">Login Form:User</h3>
+			            </div>
+			            <div class="modal-body">
+			                <div class="form-group">
+			                    <input id="user1" type="text" name="username" class="form-control myf" placeholder="Username">
+			                </div>
+			                <div class="form-group">
+			                    <input id="pass1" type="password" name="password" class="form-control myf" placeholder="Password">
+			                </div>
+			            </div>
+			            <div class="modal-footer">
+			                <button type="submit" name="submit" class="btn btn-success">Sign in</button>
+			            </div>
+			        </div>
+			    </div>
+			     </form>
+			</div>
+	
+       
+       		<div class="modal fade" role="dialog" id="loginModaladmin">
+       		<form action="php/valid_admin.php" method="post">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title">Login Form:Admin</h3>
+			            </div>
+			            <div class="modal-body">
+			                <div class="form-group">
+			                    <input type="text" name="adminname" class="form-control myf" placeholder="Adminname">
+			                </div>
+			                <div class="form-group">
+			                    <input type="password" name="adminpassword" class="form-control myf" placeholder="Password">
+			                </div>
+			            </div>
+			            <div class="modal-footer">
+			                <button type="submit" name="submitadmin" class="btn btn-success">Sign in</button>
+			            </div>
+			        </div>
+			    </div>
+                </form>
+			</div>
+	
+       
+       
+       <div class="modal fade" role="dialog" id="RegisterUser">
+            <form action="php/insert_user.php" method="post">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title">Register Form</h3>
+			            </div>   
+			            <div class="modal-body">
+			                <div class="form-group">
+			                    <span class="label1">Name</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="user1" type="text" name="username" class="form-control myf" style="width:70%; display:inline-block;" placeholder="Username">
+			                </div>
+			                <div class="form-group">
+			                   <span class="label1">Password</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="pass1" type="password" name="password" class="form-control myf" style="width:70%; display:inline-block;" placeholder="Password">
+			                </div>
+			                <div class="form-group">
+			                    <span class="label1">Email-id</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="email1" type="email" name="email_id" class="form-control myf" style="width:70%; display:inline-block;" placeholder="Email-id">
+			                </div>
+			                <div class="form-group">
+			                    <span class="label1">Mobile No.</span>&nbsp;&nbsp;&nbsp;<input id="mobile1" type="text" name="mobile_no" class="form-control myf" style="width:70%; display:inline-block;" placeholder="Mobile Number">
+			                </div>
+			            </div>
+			            <div class="modal-footer">
+                            <button id="signup" name="submitform" class="btn btn-success">Sign up
+                            </button>
+			            </div>
+			        </div>
+			    </div>
+			    </form>
+			</div>
+			
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+    	<button class="btn-lg1" onclick="popup()" type="button"><em><b>Let's Plan Your Trip</b></em>
+      </button>
+      <a href="#" name="footer"></a>
+			<footer>
+			    <div class="row">
+			        <div class="col-lg-3">
+			            <a class="navbar-brand" href="index.html"><img class="logo" src="images/logo.png" alt="#logo"></a>
+			        </div>
+			        <div class="col-lg-3">
+			            <p><b>Contact Us</b><br>+91 9893093459<br>+91 8904527439
+			            </p>
+			            <p><b>Email Id</b><br>visitmycity1221@gmail.com <br>visit_my_city1111@gmail.com</p>
+			        </div>
+			        <div class="col-lg-3">
+			            <p><b>Explore More</b> <br> 
+			            <a href="photos.html" class="ex">Photos</a>
+			            <br>   <a href="index.html#about-section" class="ex">About us</a></p>
+			        </div>
+			        <div class="col-lg-3">
+			            <p><b>Follow Us on</b><br>
+			            <i class="fa fa-facebook"></i>
+			            <i class="fa fa-twitter"></i>
+			            <i class="fa fa-whatsapp"></i>
+			            <i class="fa fa-instagram"></i>
+			            </p>
+			        </div>
+			    </div>
+			</footer>
+
+    </div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	 <script src="js/scripts.js"></script>
+
+</body>
+
+</html>

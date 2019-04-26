@@ -1,0 +1,310 @@
+body
+{
+ width: 100%;
+    margin: 0 auto;
+}
+#plan-form > form > .select-tour
+{
+    font-size: 18px;
+    padding-left: 60px;
+    overflow: hidden;
+}
+#plan-form > .sub-head
+{
+    font-family: cursive;
+    padding-left: 20px;
+    overflow: hidden;    
+    
+}
+#plan-form > .select-tour > #select-type
+{
+    padding: 5px;
+    width: 160px;
+    border-width: thin;
+    overflow: hidden;
+    
+}
+.navbar-wrapper
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+}
+.navbar-wrapper > .container
+{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.navbar-wrapper .navbar
+{
+    padding-right: 20px;
+    padding-left: 20px;
+}
+.page-header
+{
+    padding-top: -90px;
+}
+.navbar-wrapper .navbar .container
+{
+    width: auto;
+}
+.index-header
+{
+    margin-top: 0px;
+    margin-bottom: -95px;
+    
+}
+#carousel-example-generic
+{
+  border-radius: 1.2em;  
+}
+.head1
+{
+    text-align: center;
+}
+.header-name
+{  
+    background: black;
+    border-radius: 0.4em;
+    padding:20px;
+    padding-bottom: 25px;
+    padding-top: -25px;
+    border-style:double;
+    border-color: white;
+    
+}
+.carousel
+{
+   height: 500px;
+    margin-bottom: 50px;
+    margin-left: 35px;
+    margin-right: 35px;
+    border-radius: 1.2em;
+}
+.carousel .item{
+   height: 500px;
+   background-color: #777;
+     border-radius: 1.2em;
+}
+
+.carousel-inner > .item > img
+{
+    position: absolute;
+    height: 500px;
+   min-width: 100%;
+    margin: 0 auto;
+     border-radius: 1.2em;
+    top: 0;
+    left: 0;
+}
+.form-class
+{
+    margin: 0 auto;
+    text-align: center;
+}
+.mytext
+{
+    width:50%;
+    padding: 5px;
+    border: 2px solid #aaa;
+    box-sizing: border-box;
+    border-radius: 4.5px;
+
+}
+input[type=text]:focus
+{
+    border-color: deepskyblue;
+    box-shadow: 0 0 8px 0 deepskyblue;
+}
+.row
+{
+    height: 20%;
+    padding: 100px;
+    text-align: center;
+}
+.row > .col-md-4
+{
+    text-align: center;
+    margin: 0px auto;
+    padding: 9px;
+}
+.lead1
+{
+    color: black;
+    background-color:lightblue;
+    opacity:0.8;
+    padding-top: 0px;
+   margin-bottom: 29px;
+    padding-bottom: 0px;
+    border-radius: 10em;
+}
+.border-prop
+{
+    border-radius: 20%;
+    border-style: solid;
+    border-color: aliceblue;
+    border-width: thick;
+}
+.image1
+{
+    width: 120px;
+    height: 100px;
+    border-radius: 50%;
+    border-color: darkslategray;
+    border-style: dashed;
+    border-width: 2px;
+}
+.mybg
+{
+    background: url(../images/bg.jpg);
+}
+.lead3
+{
+    color: black;
+    background-color:lightblue;
+    opacity:0.8;
+    padding-top: 10px;
+    border-radius: 2em;
+    padding-bottom: 10px;
+}
+
+.lead2
+{
+    color: black;
+    background-color:darkseagreen;
+    opacity:0.8;
+    padding-top: 10px;
+    border-radius: 2em;
+    padding-bottom: 10px;
+}
+.btn-lg1
+{
+    padding: 20px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 1.5em;
+    background-color:#c7e757;
+    color:midnightblue;
+    top:500px;
+    left: 10px;
+    position:fixed;
+}
+.label1
+{
+    padding-left: 10px;
+    font-size: 16px;
+}
+.logo
+{
+    margin-top: -10px;
+}
+.about
+{
+    margin: 20px;
+    background:url(../images/image28.png);
+    border-style: double;
+    border-radius: 0.3em;
+    border-color: darkred;
+    border-width: thick;
+   /* background:radial-gradient(	#b9bbbe,#2f2f3f);         
+    background:radial-gradient(	#a05157,#fae325);
+*/
+    color: white;
+    text-align: center;
+    opacity: 1;
+}
+footer > .row
+{
+    background-color: #232a34;
+    color: white;
+    font-size: 17px;
+}
+.ex
+{
+    text-decoration: none;
+    color: white;
+}
+.ex:hover,.ex:active,.ex:visited
+{
+    
+    text-decoration: none;
+    color: white;
+}
+
+.rounded-circle
+{
+    border-radius: 50%;
+}
+#login
+{
+    min-width: 250px;
+    min-height: 90px;
+    background-color: rgba(255,255,255,0.7);
+   padding: 14px 14px 0;
+    overflow: hidden;
+}
+#login .social-buttons{
+   margin: 12px 0px;
+}
+.btn-user
+{
+     overflow: hidden;
+    color: #fff;
+    background-color: #3b599d;
+}
+.btn-admin
+{
+
+    color: #fff;
+    background-color: #55acee;
+}
+.btn-user:hover
+{
+    overflow: hidden;
+    color: #fff;
+    background-color: #5c699e;
+}
+.btn-admin:hover
+{
+    overflow: hidden;
+    color: #fff;
+    background-color: #449bdd;
+}
+.user
+{
+    padding-top: 15px;
+    color:silver;
+}
+.modal-dialog
+{
+  margin: 150px auto;
+  width: 500px;
+  height: 100px;    
+}
+.myf
+{
+    width: 75%;
+    padding: 5px;
+    border: 2px solid #aaa;
+    box-sizing: border-box;
+    border-radius: 4.5px;
+    margin: 0 auto;
+}
+@media (max-width:768px)
+{
+  .btn-user
+    {
+        display: block;
+        width: 140px;
+        margin: 10px auto;
+    }
+    .btn-admin
+    {
+        display: block;
+        width: 140px;
+        margin: 10px auto;
+    }
+
+}

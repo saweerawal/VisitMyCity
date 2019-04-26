@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<title>VisitMyCity:Dashboard</title>
+
+	<!--  -->
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/dashboard.css" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+
+	</style>
+
+</head>
+
+<body>
+
+	<div class="container">
+     <div class="navbar-wrapper">
+    <div class="container"> 
+    <div class="container-fluid">
+		  <nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top">
+    <div class="container-fluid">
+				<div class="navbar-header"> 
+				<button type="button" data-toggle="collapse" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+				</button> 
+				<a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt="#logo"></a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+       
+       <ul id="login1" class="nav navbar-nav navbar-right">
+        <li class="user" style="padding-right: 15px;"><?php include "php/valid_user.php";
+        echo $_SESSION['username'];
+        ?></li>
+        </ul>
+        </div>
+        </div>
+			</nav>
+   </div>
+</div>
+
+    </div>
+	</div>
+	
+	
+	
+	
+	<div style="padding-top:70px;height: 300px; text-align:center;">
+	    <img src="images/bg-dash.png" width="64%" height="100%" alt="Hello" style="border-radius: 6.2em; border-color: darkslategray; border-style: double;
+    border-width: thick;">
+	</div>
+	<div style="margin-top: -240px;padding-left: 180px;">
+	      <img src="images/remove-dp.jpg" width="18%" height="25%" alt="Hello" style="border-radius: 50%; border-style: dashed;border-color: darkslategray;border-width: 2px;">
+	      <span style=" padding-top: 180px;padding-left: 230px; font-family: monospace; color:darkcyan; font-size: 40px; display: inline-block;"><?php include "php/valid_user.php";
+        echo ucwords($_SESSION['username']);
+?></span>
+	</div>
+	
+	
+	<div>
+	    <span style="font-size: 30px;padding-left: 200px;">
+            <u> User Details</u>
+	    </span>
+	    <div style="font-size: 20px;font-family: cursive;">
+	        <?php include'php/db.php';
+	        $sql="SELECT * FROM USER WHERE name='".$_SESSION['username']."'";
+	        $run_sql=mysqli_query($conn,$sql);
+	        $rows=mysqli_fetch_array($run_sql);
+            echo "<div style='padding-left:200px;padding-top:10px;'>Password:&nbsp;&nbsp;&nbsp;&nbsp;<span>{$rows['password']}</span></div>
+            <div style='padding-left:200px;padding-top:10px;'>Email id:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>{$rows['email_id']}</span></div><div style='padding-left:200px;padding-top:10px;'>Mobile No.:&nbsp;&nbsp;<span>{$rows['mobile_no']}</span></div>";
+	        ?>
+	    </div>
+        <div style="padding-left: 420px;padding-top: 10px;margin-bottom: 10px;"><button data-target='#edit-user-details' id="edit-user" data-toggle="modal" name='edit-user' class='btn btn-info edit-user'>Edit Details</button></div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="modal fade" role="dialog" name="edit-user-details" id="edit-user-details">
+            <form action="php/update-user.php" method="post">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+<!--
+			            <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title"></h3>
+			            </div>
+-->
+                
+			            <div class="modal-body">
+			            <button type="button" class="close" data-dismiss="modal">&times;</button>
+			            <?php include'php/db.php';
+	        $sql="SELECT * FROM USER WHERE name='".$_SESSION['username']."'";
+	        $run_sql=mysqli_query($conn,$sql);
+	        $rows=mysqli_fetch_array($run_sql);
+                 echo "<div><input type='hidden' id='id' name='id' value='{$rows['id']}' ></div>
+                          <div>Name:<input id='name' name='name' style='margin-left:80px; width:290px;' type='text' value='{$rows['name']}' placeholder='Username'></div>
+                           <div style='padding-top:20px;'>Password:<input id='password' value='{$rows['password']}' name='password' style='margin-left:55px; width:290px;' type='text'  placeholder='Password'></div>
+                           <div style='padding-top:20px;'>Email id:<input id='email_id' name='email_id' value='{$rows['email_id']}' style='margin-left:67px; width:290px;' type='email'  placeholder='Email id'></div>
+                        <div style='padding-top:20px;'>Mobile No.:<input id='mobile_no' name='mobile_no' value='{$rows['mobile_no']}' style='margin-left:50px; width:290px;' type='text'  placeholder='Mobile Number'></div>";
+                          
+			            
+                   
+			            
+                        ?>
+                    
+			            </div>
+                        <div class="modal-footer">
+                            <button id="savechanges" name="savechanges" value="savechanges" class="btn btn-success">SAVE CHANGES
+                            </button>
+			            </div>
+			          
+
+			        </div>
+			    </div>
+			    </form>
+			</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<a href="#" name="footer"></a>
+			<footer>
+			    <div class="row">
+			        <div class="col-lg-3">
+			            <a class="navbar-brand" href="index.html"><img class="logo" src="images/logo.png" alt="#logo"></a>
+			        </div>
+			        <div class="col-lg-3">
+			            <p><b>Contact Us</b><br>+91 9893093459<br>+91 8904527439
+			            </p>
+			            <p><b>Email Id</b><br>visitmycity1221@gmail.com <br>visit_my_city1111@gmail.com</p>
+			        </div>
+			        <div class="col-lg-3">
+			            <p><b>Explore More</b> <br> <a href="photos.html" class="ex">Photos</a>
+			            <br>   <a href="#about-section" class="ex">About us</a></p>
+			        </div>
+			        <div class="col-lg-3">
+			            <p><b>Follow Us on</b><br>
+			            <i class="fa fa-facebook"></i>
+			            <i class="fa fa-twitter"></i>
+			            <i class="fa fa-whatsapp"></i>
+			            <i class="fa fa-instagram"></i>
+			            </p>
+			        </div>
+			    </div>
+			</footer>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+//          $(document).ready(function()
+//         {
+//            $('.edit-user').on('click',function()
+//        {
+//                $div=$(this).parent('div').closest('div');
+//                var data=$div.children('div').children('span').map(function()
+//                {
+//                    return $(this).text();
+//                }).get();
+//                console.log(data);
+//               $('#name').val(data[4]);
+////                $('#addr').val(data[2]);
+////                $('#pin').val(data[3]);
+////                $('#owner_name').val(data[4]);
+////                $('#owner_mobno').val(data[5]);
+////                $('#owner_email_id').val(data[6]);
+////                $('#room_fare').val(data[7]);
+////                $('#no_of_rooms').val(data[8]);
+////                $('#no_of_single_beds').val(data[9]);
+//
+//        });
+//        });  
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+	
+	
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/results.css" rel="stylesheet">
+	
+	
+
+	<title>VisitMyCity:Results</title>
+
+	<!--  -->
+
+	<style>
+  .maincontainer
+ {
+  
+    position: relative;
+   width: 220px;
+   height: 240px;
+ }
+        
+ .card
+{
+   
+
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+
+        
+}
+ .card:hover > .back
+{
+ overflow: hidden;
+ transform: rotateY(0deg);
+}
+.card:hover > .front
+{
+ overflow: hidden;
+ transform: rotateY(-180deg);
+}        
+
+.front
+{
+  
+  position: absolute;
+  width: 100%;
+   height: 100%;
+   backface-visibility: hidden;
+    transform: rotateY(0deg); 
+     transition: all 0.5s ease;    
+ }  
+.back
+ {
+      
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      background-color: #fafafa;
+      color: darkcyan;
+     transition: all 0.5s ease;
+     transform: rotateY(180deg);
+     text-align: center;
+    padding-top: 20px;
+     font-family: cursive;
+     font-size: 17px;
+            
+}
+
+	</style>
+
+</head>
+
+<body class="mybg">
+
+	<div class="container">
+	
+	
+	 <div class="navbar-wrapper">
+    <div class="container"> 
+    <div class="container-fluid">
+		  <nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top">
+    <div class="container-fluid">
+				<div class="navbar-header"> 
+				<button type="button" data-toggle="collapse" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+				</button> 
+				<a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt="#logo"></a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				
+						
+						
+				
+<!--
+					<form class="form-inline">
+						<input class="form-control mr-sm-2" type="text"> 
+						<button class="btn btn-primary my-2 my-sm-0" type="submit">
+							Search
+						</button>
+					</form>
+-->
+     
+       <ul id="login1" class="nav navbar-nav navbar-right">
+        <li style="color:silver;padding: 15px;"><?php include "php/valid_user.php";
+        echo $_SESSION['username'];
+        ?></li>
+        </ul>
+        </div>
+        </div>
+			</nav>
+   </div>
+</div>
+
+        </div>
+	
+
+	</div>
+	
+	
+	
+	<div style="padding-top: 75px;">
+	<center><span style="font-family: cursive;margin-left: -55px;">Places In Bhopal</span></center>
+	</div>
+	
+	<?php include"php/results.php"?>
+	
+	<div style="margin-left: 10px;margin-right: 10px;padding-top: 5px;text-align: center;"><?php
+
+	$sql1="SELECT * FROM WATERPARK";
+   $run_sql=mysqli_query($conn,$sql1);
+   foreach($_POST['opt'] as $roww)
+  {
+     if($roww=='Water Park')
+      {
+      echo "<h3 style='margin-left:-65px;font-family:fantasy;'>Water Parks</h3>";
+      while($rows=mysqli_fetch_array($run_sql))
+      {
+       
+       echo "<a href='#'  data-target='#image-full'><figure style='display:inline-block;'><div class='maincontainer'><div  name='{$rows['src']}' class='card' style='text-align:center;'><div class='front' style='text-align:center;margin:0 auto;'><img width='220px' align='top'class='pic imgs' height='240px'alt='Bootstrap Image Preview'src='{$rows['src']}' />
+       </div><div class='back pic' >{$rows['name']}</div></div></div>
+<figcaption style='font-family: cursive;'>{$rows['name']}</figcaption></figure></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+       
+       } 
+     }
+    }
+	?></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	<div style="margin-left: 10px;margin-right: 10px;padding-top: 5px;text-align: center;"><?php
+	
+	$sql1="SELECT * FROM MUSEUM";
+   $run_sql=mysqli_query($conn,$sql1);
+   foreach($_POST['opt'] as $roww)
+  {
+     if($roww=='Museum')
+      {
+      echo "<h3 style='margin-left:-65px;font-family:fantasy;'>Museum</h3>";
+      while($rows=mysqli_fetch_array($run_sql))
+      {
+       
+       echo "<a href='#'  data-target='#image-full'><figure style='display:inline-block;'><div class='maincontainer'><div  name='{$rows['src']}' class='card' style='text-align:center;'><div class='front' style='text-align:center;margin:0 auto;'><img width='220px' align='top'class='pic imgs' height='240px'alt='Bootstrap Image Preview'src='{$rows['src']}' />
+       </div><div class='back pic' >{$rows['name']}</div></div></div>
+<figcaption style='font-family: cursive;'>{$rows['name']}</figcaption></figure></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+       
+       } 
+     }
+    }
+	?>
+	    
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div style="margin-left: 10px;margin-right: 10px;padding-top: 5px;text-align: center;"><?php
+	
+	$sql1="SELECT * FROM LAKE";
+   $run_sql=mysqli_query($conn,$sql1);
+   foreach($_POST['opt'] as $roww)
+  {
+     if($roww=='Lakes')
+      {
+      echo "<h3 style='margin-left:-65px;font-family:fantasy;'>Lakes</h3>";
+      while($rows=mysqli_fetch_array($run_sql))
+      {
+       
+       echo "<a href='#'  data-target='#image-full'><figure style='display:inline-block;'><div class='maincontainer'><div  name='{$rows['src']}' class='card' style='text-align:center;'><div class='front' style='text-align:center;margin:0 auto;'><img width='220px' align='top'class='pic imgs' height='240px'alt='Bootstrap Image Preview'src='{$rows['src']}' />
+        </div><div class='back pic' >{$rows['name']}</div></div></div>
+<figcaption style='font-family: cursive;'>{$rows['name']}</figcaption></figure></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+       
+       } 
+     }
+    }
+	?></div>
+	
+	
+	
+	
+	
+	
+	
+	<div style="margin-left: 10px;margin-right: 10px;padding-top: 5px;text-align: center;"><?php
+	
+	$sql1="SELECT * FROM PARKS";
+   $run_sql=mysqli_query($conn,$sql1);
+   foreach($_POST['opt'] as $roww)
+  {
+     if($roww=='Parks')
+      {
+      echo "<h3 style='margin-left:-65px;font-family:fantasy;'>Parks</h3>";
+      while($rows=mysqli_fetch_array($run_sql))
+      {
+       
+       echo "<a href='#'  data-target='#image-full'><figure style='display:inline-block;'><div class='maincontainer'><div  name='{$rows['src']}' class='card' style='text-align:center;'><div class='front' style='text-align:center;margin:0 auto;'><img width='220px' align='top'class='pic imgs' height='240px'alt='Bootstrap Image Preview'src='{$rows['src']}' />
+        </div><div class='back pic' >{$rows['name']}</div></div></div>
+<figcaption style='font-family: cursive;'>{$rows['name']}</figcaption></figure></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+       
+       } 
+     }
+    }
+	?></div>
+	
+	
+	
+	
+	
+	<div style="margin-left: 10px;margin-right: 10px;padding-top: 5px;text-align: center;"><?php
+	
+	$sql1="SELECT * FROM MALLS";
+   $run_sql=mysqli_query($conn,$sql1);
+   foreach($_POST['opt'] as $roww)
+  {
+     if($roww=='Malls')
+      {
+      echo "<h3 style='margin-left:-65px;font-family:fantasy;'>Malls</h3>";
+      while($rows=mysqli_fetch_array($run_sql))
+      {
+       
+       echo "<a href='#'  data-target='#image-full'><figure style='display:inline-block;'><div class='maincontainer'><div  name='{$rows['src']}' class='card' style='text-align:center;'><div class='front' style='text-align:center;margin:0 auto;'><img width='220px' align='top'class='pic imgs' height='240px'alt='Bootstrap Image Preview'src='{$rows['src']}' />
+        </div><div class='back pic' >{$rows['name']}</div></div></div>
+<figcaption style='font-family: cursive;'>{$rows['name']}</figcaption></figure></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+       
+       } 
+     }
+    }
+	?></div>
+	
+	
+	
+	<div style="margin-left: 10px;margin-right: 10px;padding-top: 5px;text-align: center;"><?php
+	
+	$sql1="SELECT * FROM DAMS";
+   $run_sql=mysqli_query($conn,$sql1);
+   foreach($_POST['opt'] as $roww)
+  {
+     if($roww=='Dams')
+      {
+      echo "<h3 style='margin-left:-65px;font-family:fantasy;'>Dams</h3>";
+      while($rows=mysqli_fetch_array($run_sql))
+      {
+       
+       echo "<a href='#'  data-target='#image-full'><figure style='display:inline-block;'><div class='maincontainer'><div  name='{$rows['src']}' class='card' style='text-align:center;'><div class='front' style='text-align:center;margin:0 auto;'><img width='220px' align='top'class='pic imgs' height='240px'alt='Bootstrap Image Preview'src='{$rows['src']}' />
+        </div><div class='back pic' >{$rows['name']}</div></div></div>
+<figcaption style='font-family: cursive;'>{$rows['name']}</figcaption></figure></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+       
+       } 
+     }
+    }
+	?></div>
+	
+	<div style="margin-left: 10px;margin-right: 10px;padding-top:5px;text-align: center;"><?php
+	
+	$sql1="SELECT * FROM WILDLIFE";
+   $run_sql=mysqli_query($conn,$sql1);
+   foreach($_POST['opt'] as $roww)
+  {
+     if($roww=='Wildlife')
+      {
+      echo "<h3 style='margin-left:-65px;font-family:fantasy;'>Wildlife</h3>";
+      while($rows=mysqli_fetch_array($run_sql))
+      {
+       
+       echo "<a href='#'  data-target='#image-full'><figure style='display:inline-block;'><div class='maincontainer'><div  name='{$rows['src']}' class='card' style='text-align:center;'><div class='front' style='text-align:center;margin:0 auto;'><img width='220px' align='top'class='pic imgs' height='240px'alt='Bootstrap Image Preview'src='{$rows['src']}' />
+        </div><div class='back pic' >{$rows['name']}</div></div></div>
+<figcaption style='font-family: cursive;'>{$rows['name']}</figcaption></figure></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+       
+       } 
+     }
+    }
+	?></div>
+	
+	
+	
+	<div style="padding-top: 15px;">
+	<center><span style="font-family: cursive;margin-left: 10px;">Affordable Rooms</span></center>
+	</div>
+	
+
+	
+	<div style="margin-left: 10px;margin-right: 10px;padding-top:30px;text-align: center;"><?php
+	
+	$sql1="SELECT * FROM AFFORDABLE_ROOMS";
+   $run_sql=mysqli_query($conn,$sql1);
+   while($rows=mysqli_fetch_array($run_sql))
+      {
+       
+       if($_POST['room_fare']>=$rows['room_fare'])
+       {
+       
+        echo "<a href='#'  data-target='#image-full'><figure style='display:inline-block;'><img width='220px' align='top'class='pic imgs' height='240px'alt='Bootstrap Image Preview'src='{$rows['img_src']}' />
+<figcaption style='font-family: cursive;text-align: left;'><span style='text-decoration-line: underline;text-decoration-style: solid;'>Address</span>:&nbsp;{$rows['addr']}<br><span style='text-decoration-line: underline;text-decoration-style: solid;'>Pincode</span>:&nbsp;&nbsp;{$rows['pin']}<br><span style='text-decoration-line: underline;text-decoration-style: solid;'>Owner Name</span>:&nbsp;&nbsp;{$rows['owner_name']}<br><span style='text-decoration-line: underline;text-decoration-style: solid;'>Contact No.</span>:&nbsp;&nbsp;{$rows['owner_mobno']}<br><span style='text-decoration-line: underline;text-decoration-style: solid;'>Email id</span>:&nbsp;&nbsp;{$rows['owner_email_id']}<br><span style='text-decoration-line: underline;text-decoration-style: solid;'>Room Fare per day</span>:&nbsp;&nbsp;{$rows['room_fare']}<br><span style='text-decoration-line: underline;text-decoration-style: solid;'>No. of rooms</span>:&nbsp;&nbsp;{$rows['no_of_rooms']}<br><span style='text-decoration-line: underline;text-decoration-style: solid;'>No. of single beds</span>:&nbsp;&nbsp;{$rows['no_of_single_beds']}</figcaption></figure></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+       
+       
+     }
+    }
+	?></div>
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="modal fade" role="dialog" name="image-full" id="image-full">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+<!--
+			            <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title"></h3>
+			            </div>
+-->
+			            <div class="modal-body">
+			            <button type="button" class="close" data-dismiss="modal">&times;</button>
+			            <?php
+			            
+			             echo "<img src='' id='model-img' height='100%' width='100%'>";
+                    
+                        ?>
+                    
+                    
+			            </div>
+
+			          
+
+			        </div>
+			    </div>
+			</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<button class="btn-lg1" onclick="locate()" name="" type="button"><em><b>Go To Home Page</b></em>
+      </button>
+	
+	
+		<footer>
+			    <div class="row">
+			        <div class="col-lg-3">
+			            <a class="navbar-brand" href="index.html"><img class="logo" src="images/logo.png" alt="#logo"></a>
+			        </div>
+			        <div class="col-lg-3">
+			            <p><b>Contact Us</b><br>+91 9893093459<br>+91 8904527439
+			            </p>
+			            <p><b>Email Id</b><br>visitmycity1221@gmail.com <br>visit_my_city1111@gmail.com</p>
+			        </div>
+			        <div class="col-lg-3">
+			            <p><b>Explore More</b> <br> <a href="photos.html" class="ex">Photos</a>
+			            <br>   <a href="#about-section" class="ex">About us</a></p>
+			        </div>
+			        <div class="col-lg-3">
+			            <p><b>Follow Us on</b><br>
+			            <i class="fa fa-facebook"></i>
+			            <i class="fa fa-twitter"></i>
+			            <i class="fa fa-whatsapp"></i>
+			            <i class="fa fa-instagram"></i>
+			            </p>
+			        </div>
+			    </div>
+			</footer>
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+        function locate()
+        {
+            window.location.href="../Minor Project/user.html";
+        }
+  
+         $(window).on('load',function()
+         {
+            $('.imgs').click(function()
+        {
+            var src=$(this).attr('src');
+            $("#model-img").attr('src',src);
+            $("#image-full").modal('show');
+        });
+        });        
+        
+         $(window).on('load',function()
+         {
+            $('.card').click(function()
+        {
+            var src=$(this).attr('name');
+            $("#model-img").attr('src',src);
+            $("#image-full").modal('show');
+        });
+        });        
+        
+        
+        
+        
+        
+	</script>
+
+</body>
+
+</html>

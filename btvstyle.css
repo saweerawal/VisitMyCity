@@ -1,0 +1,42 @@
+
+
+
+.mybg
+{
+    background: url(../images/bg.jpg);
+}
+.header
+{
+    margin: 40px;
+}
+.style-heading
+{
+    padding-top: 5px;
+    font-family: serif;
+    color: #555;
+}
+.style-content
+{
+    width: %;
+    height: 80px;
+    margin-top: 5px;
+    font-size: 17px;
+    font-family: inherit;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    color: lightgoldenrodyellow;
+    background-color: #1f567c;
+    opacity: 0.9;
+    border-radius: 0.5em;
+    box-sizing: border-box;
+}
+.weather-style
+{
+
+    width: %;
+    margin: 0 auto;
+    border-radius: 0.5em;
+    
+}

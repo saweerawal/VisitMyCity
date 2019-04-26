@@ -1,0 +1,89 @@
+.mybg
+{
+
+  background: url(../images/bg.jpg);  
+    background-size: cover;
+
+}
+
+
+.mapped
+{
+   
+    background-size: cover;
+    padding: 0px;
+    text-align: center;
+    font-family: serif;
+}
+.map
+{
+    border-style: double;
+    border-width: thick;
+    border-color: darkslategray;
+}
+#login
+{
+    min-width: 250px;
+    min-height: 90px;
+    background-color: rgba(255,255,255,0.7);
+   padding: 14px 14px 0;
+    overflow: hidden;
+}
+#login .social-buttons{
+   margin: 12px 0px;
+}
+.btn-user
+{
+     overflow: hidden;
+    color: #fff;
+    background-color: #3b599d;
+}
+.btn-admin
+{
+
+    color: #fff;
+    background-color: #55acee;
+}
+.btn-user:hover
+{
+    overflow: hidden;
+    color: #fff;
+    background-color: #5c699e;
+}
+.btn-admin:hover
+{
+    overflow: hidden;
+    color: #fff;
+    background-color: #449bdd;
+}
+.modal-dialog
+{
+  margin: 150px auto;
+  width: 500px;
+  height: 100px;    
+}
+.myf
+{
+    width: 75%;
+    padding: 5px;
+    border: 2px solid #aaa;
+    box-sizing: border-box;
+    border-radius: 4.5px;
+    margin: 0 auto;
+}
+@media (max-width:768px)
+{
+  .btn-user
+    {
+        display: block;
+        width: 140px;
+        margin: 10px auto;
+    }
+    .btn-admin
+    {
+        display: block;
+        width: 140px;
+        margin: 10px auto;
+    }
+
+}

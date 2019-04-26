@@ -1,0 +1,151 @@
+.select-tour
+{
+    font-size: 18px;
+    padding-left: 20px;
+    overflow: hidden;
+}
+.sub-head
+{
+    font-family: cursive;
+    padding-left: 20px;
+    overflow: hidden;    
+    
+}
+
+.select-multiple1
+{
+
+/*    padding: 5px;*/
+    width: 20px;
+    border-width: 2px;
+    border-radius: 0.3em;
+    overflow: hidden;
+    border-color: grey; 
+}
+.select-type
+{
+    padding: 5px;
+    margin-left: 20px;
+    width: 220px;
+    border-width: 2px;
+    border-radius: 0.3em;
+    overflow: hidden;
+    border-color: grey;
+    
+}
+#rangeValue
+{
+    position: absolute;
+    top: 117px;
+    right: 20px;
+    padding: 2px;
+    width: 50px;
+    text-align: center;
+    background: #555;
+    box-sizing: border-box;
+    color: white;
+
+}
+
+
+
+.slider
+{
+    height: 6px;
+    background: #555;
+    -webkit-appearance:none;
+    outline: none;
+    border-radius: 5px; 
+    
+}
+.slider::-webkit-slider-thumb
+{
+    -webkit-appearance:none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #00bcd4; 
+}
+#rangeValue::before
+{
+    content: '';
+    position: absolute;
+    top: 11px;
+    transform: translateY(-50%) rotate(45deg);
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    background: #555;
+  
+}
+#rangeValue1
+{
+   position: absolute;
+    right: 20px;
+    margin-top: 2px;
+    padding: 2px;
+    width: 50px;
+    text-align: center;
+    background: #555;
+    box-sizing: border-box;
+    color: white;
+    
+
+}
+#rangeValue1::before
+{
+    overflow: hidden;
+    content: '';
+    position: absolute;
+     top: 11px;
+    transform: translateY(-50%) rotate(45deg);
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: #555;
+    
+  
+}
+.modal-content
+{
+    height: 300px;
+    overflow: hidden;
+}
+.modal-content:hover
+{
+    overflow-y: auto;
+}
+.fade
+{
+    opacity: 1;
+    -webkit-transaction:opacity 1s linear;
+    transaction:opacity 1s linear;
+}
+#rangeValue2
+{
+    
+   position: absolute;
+    right: 20px;
+    margin-top: 2px;
+    padding: 2px;
+    width: 50px;
+    text-align: center;
+    background: #555;
+    box-sizing: border-box;
+    color: white;
+
+}
+#rangeValue2::before
+{
+    
+    background-color: #555;
+    content: '';
+    margin-top: 10px;
+   position: absolute;
+    transform: translateY(-50%) rotate(45deg);
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    overflow: visible;
+     
+}

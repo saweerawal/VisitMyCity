@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ <!--   <link rel="stylesheet" media="screen" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css">
+-->
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="css/style.css" rel="stylesheet">
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+    <script src="js/parallax.js"></script>
+      
+
+     <title>VisitMyCity</title>
+  </head>
+  <body class="mybg">
+   <div class="navbar-wrapper">
+    <div class="container"> 
+    <div class="container-fluid">
+		  <nav class="navbar navbar-inverse navbar-static-top navbar-fixed-top">
+    <div class="container-fluid">
+				<div class="navbar-header"> 
+				<button type="button" data-toggle="collapse" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+				</button> 
+				<a class="navbar-brand" href="#"><img class="logo" src="images/logo.png" alt="#logo"></a>
+				</div>
+				
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							 <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							 <a class="nav-link" href="#about-section">About us</a>
+						</li>
+						<li class="nav-item">
+							 <a class="nav-link" href="#footer">Contact us</a>
+						</li>
+						<li class="nav-item">
+							 <a class="nav-link" href="photos.html">Photos</a>
+						</li>
+						<li class="nav-item">
+							 <a class="nav-link" href="besttimetovisit.html">Best Time To Visit</a>
+						</li>
+						<li class="nav-item">
+							 <a class="nav-link" href="maps.html">Map</a>
+						</li>
+						<li class="nav-item">
+							 <a class="nav-link" href="hotels.html">Hotels</a>
+						</li>
+						
+						
+				</ul>
+
+       <ul id="login1" class="nav navbar-nav navbar-right">
+       <li><a href="#" data-toggle="modal" data-target="#RegisterUser" name="user-register">Register</a></li>
+        <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a>
+        <ul id="login" class="dropdown-menu">
+           <li>
+               <div class="row1">
+                  <div class="col-sm-12">
+                      Log In Via:
+                  </div><br>
+               </div>
+               <div class="row1 social-buttons" >
+                   <div class="col-sm-6">
+                       <a href="#" class="btn btn-user" data-toggle="modal" data-target="#loginModaluser" name="user-login">USER</a> 
+                   </div>
+                   <div class="col-sm-6">
+                   <a href="#" class="btn btn-admin" data-toggle="modal" data-target="#loginModaladmin">ADMIN</a>
+                   </div>
+               </div>
+           </li>
+        </ul>
+        </li>
+        </ul>
+        </div>
+        </div>
+			</nav>
+   </div>
+</div>
+
+    </div>
+		<div class="row index-header">
+		    <div class="col-lg-6 search">
+		        <form action="search.html" method="post" class="form-class">
+						<select name="opts[]" id="opts"
+                               class="select-multiple1" multiple>
+			                        <option class="opts" value="Water Park">Water Park</option>
+			                        <option class="opts" value="Museum">Museum</option>
+			                        <option class="opts" value="Lakes">Lakes</option>
+			                        <option class="opts" value="Parks">Parks</option>
+			                        <option class="opts" value="Malls">Malls</option>
+			                        <option class="opts" value="Dams">Dams</option>
+			                        <option class="opts" value="Wildlife">Wildlife</option>
+			                    </select>
+						
+						<button id="places" name="submitplaces" value="submitplaces" class="btn btn-primary">Search
+                            </button>
+						
+						
+						
+				</form>
+		    </div>
+		    <div class="col-lg-6">
+		        <blockquote class="blockquote text-right">
+				<p class="mb-0 quote">
+				    Amidst two beautiful man-made lakes, the capital of Madhya
+Pradesh is a sprawling city with the right blend of culture, heritage
+and modern life.
+
+				</p>
+			</blockquote>
+		    </div>
+		</div>
+			
+	
+			<div class="page-header" style="margin-top:-331px;">
+				<h1 class="head1">
+                    <span class="header-name" ><a href="index.html"><img src="images/logo1.png" alt="#logo"></a></span>
+				</h1>
+			</div>
+			<div class="carousel slide" id="carousel-example-generic" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-slide-to="0" data-target="#carousel-example-generic" class="active">
+					</li>
+					<li data-slide-to="1" data-target="#carousel-example-generic">
+					</li>
+					<li data-slide-to="2" data-target="#carousel-example-generic">
+					</li>
+					<li data-slide-to="3" data-target="#carousel-example-generic">
+					</li>
+					<li data-slide-to="4" data-target="#carousel-example-generic">
+					</li>
+					<li data-slide-to="5" data-target="#carousel-example-generic">
+					</li>
+				</ol>
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img class="d-block w-100" alt="First" src="images/lake-view-day.jpg">
+						<div class="container">
+						<div class="carousel-caption lead1 d-none d-md-block">
+							<h4>
+								Bhopal Upper Lake
+							</h4>
+							
+						</div>
+				     </div>
+					</div>
+					<div class="item">
+						<img class="d-block w-100" alt="Second" src="images/mandir1.jpg">
+						<div class="container">
+						<div class="carousel-caption lead1 d-none d-md-block">
+							<h4>
+								Bhopal Birla Mandir
+							</h4>
+<!--
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+-->
+						</div>
+					</div>
+					</div>
+					<div class="item">
+						<img class="d-block w-100" alt="Third" src="images/peoples-mall.JPG">
+						<div class="container">
+						<div class="carousel-caption lead1 d-none d-md-block">
+							<h4>
+								People's Mall
+							</h4>
+<!--
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+-->
+					</div>
+					</div>
+				</div> 
+				<div class="item">
+						<img class="d-block w-100" alt="Fourth" src="images/raja-bhoj.jpg">
+						<div class="container">
+						<div class="carousel-caption lead1 d-none d-md-block">
+							<h4>
+								Raja Bhoj Statue
+							</h4>
+<!--
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+-->
+					</div>
+					</div>
+				</div> 
+				<div class="item">
+						<img class="d-block w-100" alt="Fifth" src="images/db-city.jpg">
+						<div class="container">
+						<div class="carousel-caption lead1 d-none d-md-block">
+							<h4>
+				               DB(Danik Bhaskar) Mall 
+							</h4>
+<!--
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+-->
+					</div>
+					</div>
+				</div> 
+				<div class="item">
+						<img class="d-block w-100" alt="Sixth" src="images/ser-sapata.png">
+						<div class="container">
+						<div class="carousel-caption lead1 d-none d-md-block">
+							<h4>
+								Sair Sapata
+							</h4>
+<!--
+							<p >
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+-->
+					</div>
+					</div>
+				</div> 
+				</div> 
+				
+				<a class="left  carousel-control carousel-control-prev" href="#carousel-example-generic" role="button" data-slide="prev"><span class="glyphicon glyphicon-chevron-left carousel-control-prev-icon" aria-hidden="true"></span>
+				 <span class="sr-only">Previous</span></a>
+				 <a class="right carousel-control carousel-control-next" href="#carousel-example-generic" role="button" data-slide="next">
+				 <span class="glyphicon glyphicon-chevron-right carousel-control-next-icon" aria-hidden="true"></span>
+				  <span class="sr-only">Next</span>
+				  </a>
+			</div>
+			<a href="#" name="about-section"></a>			
+		<div class="jumbotron about">
+						<h2>
+							About Us
+						</h2>
+						<p>
+						VisitMyCity is a web application inspired by the need to provide stay and travel around a new city at very affordable prices.This app is made to be used majorly by students or the bachelors who need to stay at some new places for a day or two for their work or for the sake of traveling .we provide all the info regarding the places you can visit in the city and how to reach there. our main focus is to provide a safe and affordable journey around a new place with all the facilities of healthy food and safe shelter.
+						</p>
+					</div>
+           <div>
+			<div class="row row1" data-parallax="scroll" data-image-src="images/image18.png">
+				<div class="col-md-8">
+					<p class="lead lead3 border-prop">
+						A beautiful man-made lake built in the 11th century, the Upper lake was constructed by Raja Bhoj to cure skin diseases which were otherwise incurable. It is a splendid spot with an attractive royal garden called Kamla Park in the vicinity.
+					</p>
+				</div>
+				<div class="col-md-4">
+					<img class="border-prop"  alt="Bootstrap Image Preview" src="images/upper-lake.png">
+				</div>
+			</div>
+			<div class="row row2" data-parallax="scroll" data-image-src="images/image37.png">
+				<div class="col-md-4">
+					<img class="border-prop" alt="Bootstrap Image Preview" src="images/birla.jpg">
+				</div>
+				<div class="col-md-8">
+					<p class="lead lead2 border-prop">
+						Lakshmi Narayan Temple, located atop the Arera Hills, is dedicated to the Hindu Goddess of Wealth, Lakshmi. The temple houses beautiful idols of Lakshmi and her husband Vishnu, along with a shrine of Lord Shiva and his wife Parvathi. Built by the industrial family of Birlas, the temple is also known as Birla Mandir.
+					</p>
+				</div>
+			</div>
+			<div class="row row1" data-parallax="scroll" data-image-src="images/image18.png">
+				<div class="col-md-8">
+					<p class="lead lead3 border-prop">
+						Van Vihar National Park, situated in the heart of the city, is an oasis of greenery spread across an area of 445 hectares. More of a zoo, this site houses a variety of animals that are orphaned, brought from other parts of the state or exchanges from other zoos. A natural habitat housing both herbivores and carnivores, Van Vihar was declared a national park in 1983.
+					</p>
+				</div>
+				<div class="col-md-4">
+					<img class="border-prop" alt="Bootstrap Image Preview" src="images/image47.png">
+				</div>
+			</div> 
+			<div class="row row2" data-parallax="scroll" data-image-src="images/image37.png">
+				<div class="col-md-4">
+					<img class="border-prop" alt="Bootstrap Image Preview" src="images/manav-sangh.png">
+				</div>
+				<div class="col-md-8">
+					<p class="lead lead2 border-prop">
+						Indira Gandhi Rashtriya Manav Sangrahalaya, or the National Museum of Mankind is spread across a sprawling area of 200 acres. The only tribal habitat in the world, this museum exhibits contemporary tribal cultures and actual-size dwellings of typical tribal villages of Indian states. Situated in a prehistoric site, this one of its kind museum displays a vivid collection of pre-historic painted rock shelters that are replicas of tribal life.
+
+					</p>
+				</div>
+			</div>
+			</div>
+			
+     <div class="row">
+     <h2 style="text-align: center">
+         Reviews
+     </h2>
+		<div class="col-md-4">
+			<img alt="Bootstrap Image Preview" class="image1" src="images/remove-dp.jpg" class="rounded-circle" />
+			<h3>
+				Ramesh Kumar
+			</h3>
+			<p style="font-family: cursive;">
+				Great User Interface and economical friendly applcation!!
+			</p>
+			
+		</div>
+		<div class="col-md-4">
+			<img alt="Bootstrap Image Preview" class="image1" src="images/remove-dp.jpg" class="rounded-circle" />
+			<h3>
+				Rakesh
+			</h3>
+			<p style="font-family: cursive;">
+				Good Application for planning a trip and very helpful visiting a new city!!
+			</p>
+			
+		</div>
+		<div class="col-md-4">
+			<img alt="Bootstrap Image Preview" class="image1" src="images/remove-dp.jpg" class="rounded-circle" />
+			<h3>
+				Sumit
+			</h3>
+			<p style="font-family: cursive;">
+				 I loved the feature of affordable rooms as a student this is very beneficial for me!!
+			</p>
+			
+		</div>
+	</div>
+			
+			
+			
+			<div class="modal fade" role="dialog" id="loginModaluser">
+            <form action="php/valid_user.php" method="post">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title">Login Form:User</h3>
+			            </div>   
+			            <div class="modal-body">
+			                <div class="form-group">
+			                    <input id="user1" type="text" name="username" class="form-control myf" placeholder="Username">
+			                </div>
+			                <div class="form-group">
+			                    <input id="pass1" type="password" name="password" class="form-control myf" placeholder="Password">
+			                </div>
+			            </div>
+			            <div class="modal-footer">
+                            <button id="signin" name="submit" class="btn btn-success">Sign in
+                            </button>
+			            </div>
+			        </div>
+			    </div>
+			    </form>
+			</div>
+			
+			
+			
+			
+			
+			<div class="modal fade" role="dialog" name="form-login" id="loginModaladmin">
+            <form action="php/valid_admin.php" method="post">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title">Login Form:Admin</h3>
+			            </div>
+			            <div class="modal-body">
+			                <div class="form-group">
+			                    <input type="text" name="adminname" class="form-control myf" placeholder="Adminname">
+			                </div>
+			                <div class="form-group">
+			                    <input type="password" name="adminpassword" class="form-control myf" placeholder="Password">
+			                </div>
+			            </div>
+			            <div class="modal-footer">
+			                <button  type="submit" name="submitadmin" class="btn btn-success">Sign in</button>
+			            </div>
+			        </div>
+			    </div>
+                </form>
+			</div>
+			
+			
+			
+			<div class="modal fade" role="dialog" id="RegisterUser">
+            <form action="php/insert_user.php" method="post">
+			    <div class="modal-dialog">
+			        <div class="modal-content">
+			            <div class="modal-header">
+                           <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h3 class="modal-title">Register Form</h3>
+			            </div>   
+			            <div class="modal-body">
+			                <div class="form-group">
+			                    <span class="label1">Name</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="user1" type="text" name="username" class="form-control myf" style="width:70%; display:inline-block;" placeholder="Username">
+			                </div>
+			                <div class="form-group">
+			                   <span class="label1">Password</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="pass1" type="password" name="password" class="form-control myf" style="width:70%; display:inline-block;" placeholder="Password">
+			                </div>
+			                <div class="form-group">
+			                    <span class="label1">Email-id</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="email1" type="email" name="email_id" class="form-control myf" style="width:70%; display:inline-block;" placeholder="Email-id">
+			                </div>
+			                <div class="form-group">
+			                    <span class="label1">Mobile No.</span>&nbsp;&nbsp;&nbsp;<input id="mobile1" type="text" name="mobile_no" class="form-control myf" style="width:70%; display:inline-block;" placeholder="Mobile Number">
+			                </div>
+			            </div>
+			            <div class="modal-footer">
+                            <button id="signup" name="submitform" class="btn btn-success">Sign up
+                            </button>
+			            </div>
+			        </div>
+			    </div>
+			    </form>
+			</div>
+			
+		
+			
+			
+			
+			
+			
+			
+			
+			
+			
+	
+			
+					
+							
+									
+											
+													
+															
+												
+																
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<button class="btn-lg1" onclick="popup()" type="button"><em><b>Let's Plan Your Trip</b></em>
+      </button>
+      <a href="#" name="footer"></a>
+			<footer>
+			    <div class="row">
+			        <div class="col-lg-3">
+			            <a class="navbar-brand" href="index.html"><img class="logo" src="images/logo.png" alt="#logo"></a>
+			        </div>
+			        <div class="col-lg-3">
+			            <p><b>Contact Us</b><br>+91 9893093459<br>+91 8904527439
+			            </p>
+			            <p><b>Email Id</b><br>visitmycity1221@gmail.com <br>visit_my_city1111@gmail.com</p>
+			        </div>
+			        <div class="col-lg-3">
+			            <p><b>Explore More</b> <br> <a href="photos.html" class="ex">Photos</a>
+			            <br>   <a href="#about-section" class="ex">About us</a></p>
+			        </div>
+			        <div class="col-lg-3">
+			            <p><b>Follow Us on</b><br>
+			            <i class="fa fa-facebook"></i>
+			            <i class="fa fa-twitter"></i>
+			            <i class="fa fa-whatsapp"></i>
+			            <i class="fa fa-instagram"></i>
+			            </p>
+			        </div>
+			    </div>
+			</footer>
+
+
+    <script src="js/scripts.js"></script>
+
+    <script type="text/javascript">
+        
+  
+     
+         $(document).ready(function() {
+        $('#opts').multiselect(
+        {
+           
+            nonSelectedText:'View places you can visit in bhopal',
+            enableFiltering:true,
+            buttonWidth:'260px',
+            maxHeight: 120,
+            
+            
+            
+        });
+             
+    });
+        
+      
+        
+        
+        
+    var username=document.getElementById("user1").value;
+    var password=document.getElementById("pass1").value;
+    var httpr=new XMLHttpRequest();
+    httpr.open("POST","user.html",true);
+    httpr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    httpr.onreadystatechange=function(){
+       if(httpr.readyState==4 && httpr.status==200)
+       {
+           console.log(httpr.responseText);
+//       document.getElementById("").innerHTML=httpr.responseText;
+       }
+    }
+    httpr.send("username="+username+"&password="+password);
+      </script>
+  </body>
+</html>

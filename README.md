@@ -1,0 +1,2 @@
+# Read-me
+VisitMyCity is a web application inspired by the need to provide stay and travel around a new city at very affordable prices.This app is made to be used majorly by students or the bachelors who need to stay at some new places for a day or two for their work or for the sake of traveling .we provide all the info regarding the places you can visit in the city and how to reach there. The main focus is to provide a safe and affordable journey around a new place with all the facilities of healthy food and safe shelter.
